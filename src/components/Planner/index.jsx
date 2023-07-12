@@ -16,6 +16,11 @@ const Planner = () => {
   const [initialEvents, setInitialEvents] = useState(() =>
     getInitialEventsFromLocalStorage()
   );
+  const [isEventsExpanded, setIsEventsExpanded] = useState(true);
+
+  const toggleEventsExpanded = () => {
+    setIsEventsExpanded(!isEventsExpanded);
+  };
 
   useEffect(() => {
     localStorage.setItem("currentEvents", JSON.stringify(currentEvents));
@@ -25,12 +30,17 @@ const Planner = () => {
     <Box m="20px auto" sx={{ maxWidth: "1000px" }}>
       <Header />
       <Grid container spacing={2}>
-        <Events currentEvents={currentEvents} />
+        <Events
+          currentEvents={currentEvents}
+          isExpanded={isEventsExpanded}
+          toggleEventsExpanded={toggleEventsExpanded}
+        />
         <Calendar
           handleDateClick={handleDateClick}
           handleEventClick={handleEventClick}
           setCurrentEvents={setCurrentEvents}
           initialEvents={initialEvents}
+          isExpanded={isEventsExpanded}
         />
       </Grid>
     </Box>
