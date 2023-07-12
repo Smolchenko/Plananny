@@ -13,6 +13,7 @@ const Calendar = ({
   handleEventClick,
   setCurrentEvents,
   initialEvents,
+  isExpanded,
 }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -20,7 +21,7 @@ const Calendar = ({
   return (
     <Grid
       xs={12}
-      md={8}
+      md={isExpanded ? 8 : 11}
       sx={{
         background: `${theme.palette.background.calendar}`,
         border: `2px solid ${
