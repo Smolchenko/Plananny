@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline, ThemeProvider } from "@mui/material";
 
-function App() {
+import { ColorModeContext, useMode } from "./theme";
+import Planner from "./components/Planner";
+import Footer from "./components/Footer/Footer";
+import pencilImage from "./assets/pencil.jpeg";
+
+import "./App.css";
+
+const App = () => {
+  const [theme, colorMode] = useMode();
+
+  const mainStyles = {
+    backgroundColor: theme.palette.background.main,
+    backgroundImage: theme.palette.mode !== "dark" ? `url(${pencilImage})` : "",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    flex: 1,
+    padding: "0 20px",
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ColorModeContext.Provider value={colorMode}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <div className="App">
+          <main style={mainStyles}>
+            <Planner />
+          </main>
+          <Footer />
+        </div>
+      </ThemeProvider>
+    </ColorModeContext.Provider>
   );
-}
+};
 
 export default App;

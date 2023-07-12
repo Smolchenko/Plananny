@@ -1,13 +1,39 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
+
+html,
+body,
+#root,
+.app,
+.content {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #116d6e;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #60a9a6;
+}
+
+:root {
+  --fc-today-bg-color: rgba(174, 244, 255, 0.15);
+  --fc-button-bg-color: #60a9a6;
+  --fc-button-active-bg-color: #116d6e;
+  --fc-button-border-color: #116d6e;
+  --fc-button-active-border-color: #116d6e;
+  --fc-page-bg-color: rgba(174, 244, 255, 0.15);
+  --fc-neutral-bg-color: transparent;
+  --fc-list-event-hover-bg-color: rgba(96, 105, 105, 0.05);
 }
