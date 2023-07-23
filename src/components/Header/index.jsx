@@ -1,4 +1,5 @@
 import { Typography, Box, useTheme } from "@mui/material";
+
 import darkHighlight from "../../assets/yellow_vector_highlight_dark.svg";
 import lightHighlight from "../../assets/yellow_vector_highlight.svg";
 

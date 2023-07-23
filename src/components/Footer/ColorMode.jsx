@@ -21,11 +21,8 @@ const ColorMode = () => {
   return (
     <Box display="flex">
       <IconButton onClick={handleColorModeToggle}>
-        {theme.palette.mode === "dark" ? (
-          <LightModeOutlinedIcon />
-        ) : (
-          <DarkModeOutlinedIcon />
-        )}
+        {theme.palette.mode === "dark" && <LightModeOutlinedIcon />}
+        {theme.palette.mode !== "dark" && <DarkModeOutlinedIcon />}
       </IconButton>
     </Box>
   );
