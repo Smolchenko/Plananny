@@ -64,7 +64,7 @@ Open your web browser and visit http://localhost:3000 to view the app.
 ## Technologies Used
 
 <a name="technologies-used"></a>
-React | JavaScript | Material-UI | CSS3 | HTML5
+React | JavaScript | Material-UI | CSS3 | HTML5 | FullCalendar
 
 ## License
 
